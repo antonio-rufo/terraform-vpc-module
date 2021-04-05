@@ -9,6 +9,7 @@ variable "name" {
 
 variable "vpc_cidr_block" {
   description = "AWS VPC CIDR Block"
+  type        = string
 }
 
 variable "azs" {
@@ -20,11 +21,13 @@ variable "azs" {
 variable "public_subnets" {
   type        = list(any)
   description = "List of CIDRs to use on each availability zone for public subnets"
+  default     = []
 }
 
 variable "private_subnets" {
   type        = list(any)
   description = "List of CIDRs to use on each availability zone for private subnets"
+  default     = []
 }
 
 variable "single_nat_gateway" {
