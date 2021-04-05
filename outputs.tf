@@ -8,7 +8,7 @@ output "vpc_id" {
 
 output "vpc_cidr_block" {
   description = "The CIDR block of the VPC"
-  value       = concat(aws_vpc.this.*.cidr_block, [""])[0]
+  value       = concat(aws_vpc.vpc.*.cidr_block, [""])[0]
 }
 
 ###############################################################################
